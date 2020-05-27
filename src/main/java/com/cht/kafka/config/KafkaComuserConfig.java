@@ -113,12 +113,26 @@ public class KafkaComuserConfig {
 
     public Map<String, Object> consumerConfigs() {
         Map<String, Object> propsMap = new HashMap<>();
+
+        //消费者连接的kafka集群
         propsMap.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+
+        //是否自动提交
         propsMap.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, enableAutoCommit);
+
+        //自动提交的频率
         propsMap.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, autoCommitInterval);
+
+        //key的反序列化器
         propsMap.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, keyDeserializer);
+
+        //value的反序列化器
         propsMap.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, valueDeserializer);
+
+        //指定消费者所在组的名称
         propsMap.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
+
+        //指定每次启动消费者，从哪开始消费
         propsMap.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, autoOffsetReset);
         return propsMap;
     }

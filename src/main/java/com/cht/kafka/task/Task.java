@@ -7,18 +7,21 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+
 @Component
 @Configuration
 @EnableScheduling
 public class Task {
 
-    @Autowired
+    //@Autowired
     private KafkaProducter producter;
 
-    @Scheduled(fixedRate = 5000)
+    //@Scheduled(fixedRate = 5000)
     public void testTask(){
         String str=String.valueOf(System.currentTimeMillis());
         producter.sendDataToKafka("test",str);
 
     }
+
 }

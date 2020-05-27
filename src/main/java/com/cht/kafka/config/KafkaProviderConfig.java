@@ -19,13 +19,22 @@ import java.util.Map;
 public class KafkaProviderConfig {
 
     @Value("${kafka.bootstrap-servers}")
+    //指定kafka集群
     private String bootstrapServers;
+
+    //指定发送消息失败重试后的次数
     @Value("${kafka.producer.retries}")
     private String retries;
+
+    //指定超时时间
     @Value("${kafka.producer.timeout}")
     private String timeout;
+
+    //指定key序列化器
     @Value("${kafka.producer.key-serializer}")
     private String keySerializer;
+
+    //指定value序列化器
     @Value("${kafka.producer.value-serializer}")
     private String valueSerializer;
 
