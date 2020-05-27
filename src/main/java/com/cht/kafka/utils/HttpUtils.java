@@ -41,7 +41,6 @@ import java.util.Map;
  * 1.普通http请求工具(使用httpClient进行http,https请求的发送)
  * 2.高级http工具(使用net.sourceforge.htmlunit获取完整的html页面,即完成后台js代码的运行)
  * </pre>
- * Created by xuyh at 2017/7/17 19:08.
  */
 public class HttpUtils {
 	/**
